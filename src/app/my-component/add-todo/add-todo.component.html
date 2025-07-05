@@ -1,0 +1,23 @@
+<div class="todo-container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        placeholder="Enter todo here..."
+        [(ngModel)]="title"
+      />
+    </div>
+    <div class="input-group mb-3">
+      <textarea
+        type="text"
+        class="form-control"
+        name="desc"
+        placeholder="Enter description here..."
+        [(ngModel)]="desc"
+      ></textarea>
+    </div>
+    <button class="btn btn-primary">Add</button>
+  </form>
+</div>

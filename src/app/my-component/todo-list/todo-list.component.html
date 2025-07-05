@@ -1,0 +1,22 @@
+<div
+  class="todo-item d-flex p-2 bg-body-tertiary rounded mb-2 align-items-center shadow-sm"
+>
+  <div class="item-body w-100">
+    <h4 [ngClass]="{ 'text-strike': !todo.active }">{{ todo.title }}</h4>
+    <p [ngClass]="{ 'text-strike': !todo.active }">{{ todo.desc }}</p>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="checkDefault{{ todo.id }}"
+        [checked]="!todo.active"
+        (change)="toggleTodo(todo.id)"
+      />
+      <label class="form-check-label" for="checkDefault{{ todo.id }}">
+        {{ todo.active ? "Mark Complete" : "Completed" }}
+      </label>
+    </div>
+  </div>
+
+  <button class="btn btn-danger" (click)="onClick(todo.id)">Remove</button>
+</div>
